@@ -44,7 +44,7 @@ export default function Footer() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">
-            FooterFooterFooterFooterFooter
+            더 나은 게임을 위한 새로운 시작. PA.GG
           </Typography>
           <Copyright />
         </Container>

@@ -84,8 +84,8 @@ export default function LoginPage() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
-                비밀번호를 잊으셨나요?
+              <Link href="/forgotpassword" variant="body2">
+                {"비밀번호를 잊으셨나요?"}
               </Link>
             </Grid>
             <Grid item>

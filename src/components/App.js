@@ -9,7 +9,8 @@ import LiveTrollPage from "./views/LiveTrollPage/LiveTrollPage";
 import UserReportPage from "./views/UserReportPage/UserReportPage";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
-
+import Match from "./views/Match/Match";
+import Game from "./views/Game/Game";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,8 @@ function App() {
           <Route exact path="/multisearch" component={MultiSearchPage} />
           <Route exact path="/livetroll" component={LiveTrollPage} />
           <Route exact path="/userreport" component={UserReportPage} />
+          <Route exact path="/match" component={Match} />
+          <Route exact path="/game" component={Game} />
         </Switch>
       </div>
       <Footer />

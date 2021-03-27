@@ -1,12 +1,12 @@
 import React from 'react'
 import {Paper, LinearProgress} from '@material-ui/core'
 
-function MatchInGameThing() {
+function MatchInGameThingRed() {
 
     const styleBlueThing = {
         position: 'relative',
-        backgroundColor: '#c9ccff',
-        border: '1px solid #b1b4e6',
+        backgroundColor: '#ffc9c9',
+        border: '1px solid #e6b1b1',
         height: '40px',
     }
 
@@ -199,7 +199,7 @@ function MatchInGameThing() {
     }
 
     const styleRedCard = {
-
+               
     }
 
 
@@ -246,4 +246,4 @@ function MatchInGameThing() {
     )
 }
 
-export default MatchInGameThing
+export default MatchInGameThingRed

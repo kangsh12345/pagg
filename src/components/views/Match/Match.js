@@ -6,6 +6,7 @@ import RankTable from './RankTable';
 import RecentInfo from './RecentInfo';
 import MatchThing from './MatchThing';
 import MatchThingDraw from './MatchThingDraw';
+import { Link } from 'react-router-dom'
 
 import { Button, Tab, Tabs, Paper, Grid, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
@@ -539,7 +540,7 @@ function Match(props) {
                     </div>
                 </div>
                 <div className='BigBox' style={styleBigBox}>
-                    <div className='TBox' style={styleTBox}>
+                <div className='TBox' style={styleTBox}>
                         <Paper square>
                             {/* 탭 눌렀을때 종합은 이 페이지로 오게 해주고 인게임 정보는 인게임정보 url로 이동되게 함 */}
                             <Tabs
@@ -548,8 +549,8 @@ function Match(props) {
                                 textColor="primary"
                                 onChange={handleChange}
                             >
-                                <Tab label="종합" value='TBoxTotal' style={{outline: '0px',}} />
-                                <Tab label="인게임 정보" value='TBoxInGame' style={{outline: '0px',}} />
+                                <Tab label="종합" value='TBoxTotal' style={{outline: '0px',}} component={Link} to="/match"/>
+                                <Tab label="인게임 정보" value='TBoxInGame' style={{outline: '0px',}} component={Link} to="/matchingame"/>
                             </Tabs>
                         </Paper>
                     </div>

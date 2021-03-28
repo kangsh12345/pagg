@@ -5,8 +5,8 @@ function MatchInGameThing() {
 
     const styleBlueThing = {
         position: 'relative',
-        backgroundColor: '#c9ccff',
-        border: '1px solid #b1b4e6',
+        backgroundColor: '#f2f2f2',
+        border: '1px solid #cdd2d2',
         height: '40px',
     }
 
@@ -21,6 +21,15 @@ function MatchInGameThing() {
         borderRadius: '2px',
         display: 'block',
 
+    }
+
+    const styleFront = {
+        position: 'absolute',
+        backgroundColor: '#c9ccff',
+        height: '38px',
+        width: '3px',
+        marginLeft: '0px',
+        marginTop: '0px',
     }
 
     const styleAlert = {
@@ -199,7 +208,41 @@ function MatchInGameThing() {
     }
 
     const styleRedCard = {
+        position: 'absolute',
+        marginLeft: '17px',
+        marginTop: '1.5px',
+        display: 'block',
+        height: '17px',
+        width: '17px',
 
+    }
+
+    const styleRedCardCount ={
+        position: 'absolute',
+        marginLeft: '43px',
+        marginTop: '3.2px',
+        fontSize: '10px',
+        fontWeight: '500',
+        color: '#5c5b5b'
+    }
+
+    const styleYellowCard = {
+        position: 'absolute',
+        marginLeft: '17px',
+        marginTop: '19.5px',
+        display: 'block',
+        height: '17px',
+        width: '17px',
+
+    }
+
+    const styleYellowCardCount ={
+        position: 'absolute',
+        marginLeft: '43px',
+        marginTop: '21.2px',
+        fontSize: '10px',
+        fontWeight: '500',
+        color: '#5c5b5b'
     }
 
 
@@ -215,6 +258,7 @@ function MatchInGameThing() {
                     <img style={styleRuneImg2} />
                     <div style={styleUserName} >일이삼사오육칠팔구십십일십이십삼</div>
                 </Paper>
+                <div style={styleFront}/>
                 <img style={styleTierImg} />
                 <div style={styleTier}>Diamond 2 ( 70LP )</div>
                 <div style={styleRecent}>최근 승률</div>
@@ -232,14 +276,14 @@ function MatchInGameThing() {
                 {/* 전시즌 티어 말풍선으로 나타내게하기 */}
                 <img style={styleLastTier} />
                 <Paper style={styleBlueThingSecond}>
-                    {/* <img style={styleRedCard} />
+                    <img style={styleRedCard} />
                     <div style={styleRedCardCount}>
-
+                        0
                     </div>
                     <img style={styleYellowCard} />
                     <div style={styleYellowCardCount}>
-                        
-                    </div> */}
+                        0
+                    </div>
                 </Paper>
             </div>
         </div>

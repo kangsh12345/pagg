@@ -265,7 +265,9 @@ function MatchInGame(props) {
 
     const styleBlueBox = {
         position: 'relative',
+        // border: '1px solid #ffffff',
         backgroundColor: '#007bc7',
+        // background: 'linear-gradient(to right, blue, white)',
         height: '25px',
     }
 
@@ -289,10 +291,68 @@ function MatchInGame(props) {
         lineHeight: '21px',
     }
 
+    
+    const styleBlueBoxin2 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '327px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleBlueBoxin3 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '630px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleBlueBoxin4 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '827px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleBlueBoxin5 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-28px',
+        marginLeft: '925px',
+        borderRadius: '5px',
+        fontSize: '10px',
+        lineHeight: '21px',
+    }
+
+    const styleBlueBoxin6 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-16px',
+        marginLeft: '915px',
+        borderRadius: '5px',
+        fontSize: '10px',
+        lineHeight: '21px',
+    }
+
 
     const styleRedBox = {
         position: 'relative',
         backgroundColor: '#c70000',
+        // background: 'linear-gradient(to right, red, white)',
+        // border: '1px solid #ffffff',
         height: '25px',
     }
 
@@ -313,6 +373,61 @@ function MatchInGame(props) {
         marginLeft: '30px',
         borderRadius: '5px',
         fontSize: '18px',
+        lineHeight: '21px',
+    }
+
+    const styleRedBoxin2 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '327px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleRedBoxin3 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '630px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleRedBoxin4 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-23px',
+        marginLeft: '827px',
+        borderRadius: '5px',
+        fontSize: '13px',
+        lineHeight: '21px',
+    }
+
+    const styleRedBoxin5 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-28px',
+        marginLeft: '925px',
+        borderRadius: '5px',
+        fontSize: '10px',
+        lineHeight: '21px',
+    }
+
+    const styleRedBoxin6 = {
+        position: 'absolute',
+        color: '#ffffff',
+        height: '21px',
+        marginTop: '-16px',
+        marginLeft: '915px',
+        borderRadius: '5px',
+        fontSize: '10px',
         lineHeight: '21px',
     }
     
@@ -420,6 +535,11 @@ function MatchInGame(props) {
                             <div className='BlueBox' style={styleBlueBox}>
                                 <div style={styleBlueBoxSpace} />
                                 <span className='BlueBoxin' style={styleBlueBoxin}>블루팀</span>
+                                <span style={styleBlueBoxin2}>S2021</span>
+                                <span style={styleBlueBoxin3}>챔피언 정보</span>
+                                <span style={styleBlueBoxin4}>S2020</span>
+                                <span style={styleBlueBoxin5}>최근</span>
+                                <span style={styleBlueBoxin6}>고의트롤</span>
                             </div>
                             {/* 여기 나중에 map함수로 묶어야함 */}
                             <MatchInGameThing />
@@ -433,6 +553,11 @@ function MatchInGame(props) {
                             <div className='BlueBox' style={styleRedBox}>
                                 <div style={styleRedBoxSpace} />
                                 <span className='BlueBoxin' style={styleRedBoxin}>레드팀</span>
+                                <span style={styleRedBoxin2}>S2021</span>
+                                <span style={styleRedBoxin3}>챔피언 정보</span>
+                                <span style={styleRedBoxin4}>S2020</span>
+                                <span style={styleRedBoxin5}>최근</span>
+                                <span style={styleRedBoxin6}>고의트롤</span>
                             </div>
                             {/* 여기 나중에 map함수로 묶어야함 */}
                             <MatchInGameThingRed />

@@ -441,6 +441,7 @@ function Match(props) {
         position: 'relative',
         marginTop: '10px',
         marginLeft: '3px',
+        marginBottom: '20px',
     }
     
     const styleLoadingBtn = {
@@ -540,7 +541,7 @@ function Match(props) {
                     </div>
                 </div>
                 <div className='BigBox' style={styleBigBox}>
-                <div className='TBox' style={styleTBox}>
+                    <div className='TBox' style={styleTBox}>
                         <Paper square>
                             {/* 탭 눌렀을때 종합은 이 페이지로 오게 해주고 인게임 정보는 인게임정보 url로 이동되게 함 */}
                             <Tabs

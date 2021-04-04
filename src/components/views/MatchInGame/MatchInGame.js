@@ -261,6 +261,7 @@ function MatchInGame(props) {
         borderRadius: '2px',
         marginTop: '0px',
         height: '451px',
+        marginBottom: '40px',
     }
 
     const styleBlueBox = {

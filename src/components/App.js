@@ -12,6 +12,7 @@ import Footer from "./views/Footer/Footer";
 import Match from "./views/Match/Match";
 import Game from "./views/Game/Game";
 import MatchInGame from "./views/MatchInGame/MatchInGame";
+import ReportPage from "./views/UserReportPage/ReportPage/ReportPage"
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/match" component={Match} />
           <Route exact path="/game" component={Game} />
           <Route exact path="/matchingame" component={MatchInGame} />
+          <Route exact path="/ReportPage" component={ReportPage} />
         </Switch>
       </div>
       <Footer />

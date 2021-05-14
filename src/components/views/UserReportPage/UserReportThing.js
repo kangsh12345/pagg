@@ -81,9 +81,10 @@ function UserReportThing() {
         marginTop: '0px',
         marginLeft: '25px',
         borderRadius: '0px',
-        height: '37px',
+        minHeight: '37px',
         width: '950px',
         display: 'flex',
+        flexWrap: 'wrap',
         borderTop: '1px solid #b0b0b0',
         borderBottom: '1px solid #b0b0b0',
         padding: '2px 0 2px 0',
@@ -131,7 +132,8 @@ function UserReportThing() {
                     {/*해쉬태그 최대 5개만 들어가게 */}
                     <HashTagText /><HashTagText /><HashTagText /><HashTagText /><HashTagText />
                     <HashTagText /><HashTagText /><HashTagText /><HashTagText /><HashTagText />
-                    
+                    <HashTagText /><HashTagText /><HashTagText /><HashTagText /><HashTagText />
+                    <HashTagText /><HashTagText /><HashTagText /><HashTagText /><HashTagText />
                 </div>
                 <div style={styleGame}>
                     <MatchThing/>

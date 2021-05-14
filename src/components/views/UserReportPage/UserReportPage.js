@@ -6,6 +6,8 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { InputBase } from '@material-ui/core';
 import UserReportThing from './UserReportThing';
 
+import { Link } from 'react-router-dom'
+
 
 function UserReportPage() {
 
@@ -69,7 +71,9 @@ function UserReportPage() {
                 <SearchIcon style={styleSearchIcon} />
                 <InputBase style={styleInputBase} placeholder="소환사명..."/>
                 <TuneIcon style={styleTuneIcon} />
-                <BorderColorIcon style={styleBorder}/>
+                <a href="/ReportPage">
+                    <BorderColorIcon style={styleBorder} />
+                </a>
             </div>
             <div style={bigBox}>
                 <UserReportThing />

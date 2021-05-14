@@ -500,7 +500,7 @@ function Match(props) {
                                 />
                             ))} */}
                             <PastRankList />
-                            <div style={styleReport}><ReportProblemIcon color='error' fontSize='large' /></div>
+                            <div style={styleReport}><a href="/ReportPage"><ReportProblemIcon color='error' fontSize='large' /></a></div>
                         </Grid>
                         <div className="Face" style={styleFace}>
                             <div className="UserIcon" style={styleUserIcon}>

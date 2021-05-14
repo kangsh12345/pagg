@@ -109,9 +109,18 @@ export default function NavBar() {
           variant="button"
           color="textPrimary"
           href="/userreport"
-          className={classes.link}
+          className={classes.toolbarTitle}
         >
           유저 신고
+        </Link>
+
+        <Link
+          variant="button"
+          color="textPrimary"
+          href="/game"
+          className={classes.link}
+        >
+          팀운강화기
         </Link>
         <nav></nav>
         <div className={classes.search}>

@@ -1,0 +1,30 @@
+.dropzone .MuiDropzoneArea-root{
+    float: left;
+    position: relative;
+    min-height: 0px;
+    height: 150px;
+    width: 475px;
+    margin-right: 10px;
+}
+
+.dropzone .MuiDropzoneArea-icon{
+    color: #e6e6e6;
+    margin-top: -15px;
+}
+
+.dropzone .MuiDropzoneArea-text{
+    color: #969696;
+    font-size: 20px;
+}
+
+.dropzone .MuiDropzonePreviewList-image{
+    /* margin-top: -90px; */
+    margin-left: 175px;
+}
+
+.dropzone .MuiDropzonePreviewList-removeButton{
+    margin-top: 40px;
+    margin-right: -190px;
+    /* width: 60px;
+    height: 60px; */
+}

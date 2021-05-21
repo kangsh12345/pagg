@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { InputBase, Button } from '@material-ui/core';
+import { InputBase, Button, TextField } from '@material-ui/core';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import { DropzoneArea } from 'material-ui-dropzone';
+import "./ReportPage.css";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import axios from 'axios';
+
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -14,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
       minWidth: 200,
       backgroundColor: "#ffffff",
     },
+    dropZone: {
+        height: '50px',
+    }
  }));
 
 
@@ -60,7 +68,7 @@ function ReportPage() {
 
     const styleInputBase2 = {
         position: 'absolute',
-        marginLeft: '15px',
+        marginLeft: '14px',
         marginTop: '55px',
         padding: '7px 14px 7px 14px',
         width: '970px',
@@ -103,11 +111,12 @@ function ReportPage() {
 
     const styleDrop ={
         positon: 'absolute',
-        marginTop: '340px',
+        marginTop: '320px',
         marginLeft: '15px',
         width: '970px',
-        height: '150px',
-        border: '1px solid #b3b3b3',
+        marginLeft: '21px',
+        // height: '130px',
+        // border: '1px solid #b3b3b3',
     }
 
     const styleButtonMatch = {
@@ -119,27 +128,90 @@ function ReportPage() {
         left: '0px',
         right: '0px',
         margin: '0 auto',
-        marginTop: '40px',
+        marginTop: '200px',
         fontSize: '20px',
         
     }
 
+
+
     const classes = useStyles();
-    const [kind, setKind] = React.useState('');
-  
-    const handleChange = (event) => {
-      setKind(event.target.value);
+    const [kind, setKind] = useState('');
+    const [file, setfile] = useState(true);
+    const [file2, setfile2] = useState(true);
+    
+
+    
+    const [imagefile,setimagefile] = useState(null);
+    const [refile, setrefile] = useState(null);
+    
+    const trollname = useRef(null);
+    // trollname.current.value
+    const abouttroll = useRef(null);
+    const tag = useRef(null);
+
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        const formData = new FormData();
+
+        formData.append('Trollname', trollname.current.value);
+        formData.append('Trolltype', kind);
+        formData.append('Trollinfo', abouttroll.current.value);
+        formData.append('Trolltag', tag.current.value);
+        formData.append('picture', imagefile);
+        formData.append('gamefile', refile);
+
+        return axios.post("/report", formData).then(res =>{
+            alert('성공')
+        }).catch(err => {
+            alert('실패')
+        })
+    }
+
+
+    const handleChange = e => {
+        setKind(e.target.value);
     };
+
+
+    const aa = e => {
+        setfile(true);
+    }
+
+    const aa2 = e => {
+        setfile(false);
+    }
+
+    const bb = e => {
+        setfile2(true);
+    }
+
+    const bb2 = e => {
+        setfile2(false);
+    }
+
+    const te1 = files => { // 사진
+        setimagefile(files[0])
+    }
+
+    const te2 = files => { // 사진
+        setrefile(files[0])
+    }
+
 
     return (
         <div>
             <div style={styleHeader}>
                 유저 신고
             </div>
-            <div style={bigBox}>
+            <div style={bigBox} onSubmit={handleSubmit}>
                 <div>
                 <FormControl variant="outlined" className={classes.formControl}>
-                    <InputLabel>트롤 유형</InputLabel>              
+                    <InputLabel>
+                        트롤 유형
+                    </InputLabel>              
                     <Select
                         value={kind}
                         onChange={handleChange}
@@ -152,23 +224,42 @@ function ReportPage() {
                 </FormControl>
                 </div>
                 <div >
-                    <InputBase style={styleInputBase} placeholder="소환사명"/>
+                    <InputBase style={styleInputBase} placeholder="소환사명" inputRef={trollname}/>
                 </div>
                 <div >
-                    <textarea style={styleInputBase2} placeholder=""></textarea>
+                    <TextField multiline rows={7} InputProps={{ disableUnderline: true }} style={styleInputBase2} placeholder="" inputRef={abouttroll}></TextField>
                     
                     
                 </div>
                 <div>
                     <LocalOfferIcon style={styleTagImg}/>
                     <span style={styleTagImgText}>Tag (쉼표로 구분)</span>
-                    <InputBase style={styleInputBase3} placeholder="욕설,cs뺏음,..."></InputBase>
+                    <InputBase style={styleInputBase3} placeholder="욕설,cs뺏음,..." inputRef={tag}></InputBase>
                 </div>
-                <div style={styleDrop}>
+                <div style={styleDrop} className="dropzone">
+                    <DropzoneArea 
+                        dropzoneText={file ? "신고 관련 이미지 첨부" : ""}
+                        Icon={file ? AddCircleIcon : "none"}
+                        filesLimit='1' 
+                        showAlerts={false}
+                        onDrop={aa2}
+                        onDelete={aa}
+                        onChange={te1}
+                    />
 
+                    <DropzoneArea 
+                        dropzoneText={file2 ? "다시보기 파일(.rofl) 첨부" : ""} 
+                        Icon={file2 ? AddCircleIcon : "none"} 
+                        filesLimit='1'
+                        showAlerts={false}
+                        onDrop={bb2}
+                        onDelete={bb}
+                        onChange={te2}
+                    />
+                
                 </div>
                 <div>
-                    <Button variant="contained" style={styleButtonMatch}>작성 완료</Button>
+                    <Button type="submit" variant="contained" style={styleButtonMatch} onClick={handleSubmit}>작성 완료</Button>
                 </div>
             </div>
         </div>

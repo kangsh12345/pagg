@@ -70,7 +70,7 @@ function ReportPage() {
         position: 'absolute',
         marginLeft: '14px',
         marginTop: '55px',
-        padding: '7px 14px 7px 14px',
+        padding: '2px 14px 0px 14px',
         width: '970px',
         height: '150px',
         border: '1px solid #b3b3b3',
